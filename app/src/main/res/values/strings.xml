@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LoftMoney</string>
     <string name="homeText">Main activity</string>
+    <string name="loginText">Login</string>
 </resources>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LoftMoney (EL)</string>
     <string name="homeText">Main activity (GR) </string>
+    <string name="loginText">Είσοδος</string>
 </resources>

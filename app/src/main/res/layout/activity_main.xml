@@ -8,29 +8,40 @@
     android:background="@color/colorPrimary">
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/icon"
-        android:id="@+id/imageLogo"
-        />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_below="@id/imageLogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon"
+            android:id="@+id/imageLogo"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="32dp"
             android:layout_gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"
+            style="@style/TextStyle"
+            />
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/loginText"
+            android:background="@color/colorWhite"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+
             />
     </LinearLayout>
 
