@@ -39,7 +39,7 @@
             android:layout_gravity="center"
             android:hint="@string/loginText"
             android:background="@color/colorWhite"
-            android:textSize="14sp"
+            android:textSize="@dimen/buttonTextSize"
             android:textAllCaps="true"
 
             />

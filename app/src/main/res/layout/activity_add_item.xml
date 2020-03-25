@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_above="@id/BtnAddActivityAdd"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/mainLeftPadding"
+        android:paddingRight="104dp"
+        android:layout_marginBottom="68dp"
+
+        >
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/loginText"
+        android:layout_marginBottom="18dp"
+        android:inputType="textFilter"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="@color/colorWhite"
+        android:lineSpacingExtra="0sp"
+        android:hint="@string/EditAddActivityTitle"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tsena" />
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="@color/colorWhite"
+        android:lineSpacingExtra="0sp"
+        android:hint="@string/EditAddActivityNumber" />
+    </LinearLayout>
     <Button
+        android:id="@+id/BtnAddActivityAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Otpravit"
-        android:background="@color/colorPrimary"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/BtnAddActivityAdd"
+        android:background="@null"
         />
-</LinearLayout>
+</RelativeLayout>
