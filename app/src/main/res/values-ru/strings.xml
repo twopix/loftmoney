@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loginText">Войти</string>
+    <string name="EditAddActivityTitle">Название</string>
+    <string name="EditAddActivityNumber">Цена</string>
+    <string name="BtnAddActivityAdd">Добавить</string>
+</resources>
