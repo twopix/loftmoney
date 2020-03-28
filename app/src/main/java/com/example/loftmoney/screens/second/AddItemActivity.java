@@ -1,9 +1,11 @@
-package com.example.loftmoney;
+package com.example.loftmoney.screens.second;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.loftmoney.R;
 
 public class AddItemActivity extends AppCompatActivity {
     @Override
