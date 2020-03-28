@@ -31,12 +31,13 @@ dependencies {
 
 //  add REcyclerView library
     implementation "androidx.recyclerview:recyclerview:1.1.0"
-    // For control over item selection of both touch and mouse driven selection
-    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
 
 
 //    add dependencies for images
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     testImplementation 'junit:junit:4.12'

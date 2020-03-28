@@ -1,6 +1,11 @@
 package com.example.loftmoney.screens.main.adapter;
 
-public class ChargeModel {
+import java.io.Serializable;
+
+public class ChargeModel implements Serializable {
+
+    public static String KEY_NAME = ChargeModel.class.getName();
+
     private String name;
     private String value;
 

@@ -17,13 +17,21 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
 
     private List<ChargeModel> mDataList = new ArrayList<>();
 
+    public List<ChargeModel> getData() {
+        return mDataList;
+    }
+
+    public void setData(List<ChargeModel> newList) {
+        this.mDataList = newList;
+    }
+
     public void setNewData(List<ChargeModel> newData) {
         mDataList.clear();
         mDataList.addAll(newData);
         notifyDataSetChanged();
     }
 
-    public void setmDataToTop(ChargeModel model) {
+    public void addDataToTop(ChargeModel model) {
         mDataList.add(0,model);
         notifyItemInserted(0);
 
@@ -32,7 +40,7 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
     @NonNull
     @Override
     public ChargesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext())
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         return new ChargesViewHolder(layoutInflater.inflate(R.layout.cell_charge, parent, false));
     }
 
@@ -48,8 +56,8 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
 
     static class ChargesViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtName = itemView.findViewById(R.id.textChargeName)
-        private TextView txtValue = itemView.findViewById(R.id.textChargeValue)
+        private TextView txtName = itemView.findViewById(R.id.textChargeName);
+        private TextView txtValue = itemView.findViewById(R.id.textChargeValue);
 
 
         ChargesViewHolder(@NonNull View itemView) {
