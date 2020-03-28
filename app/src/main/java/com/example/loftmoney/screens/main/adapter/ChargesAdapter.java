@@ -1,10 +1,14 @@
 package com.example.loftmoney.screens.main.adapter;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.loftmoney.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +17,28 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
 
     private List<ChargeModel> mDataList = new ArrayList<>();
 
+    public void setNewData(List<ChargeModel> newData) {
+        mDataList.clear();
+        mDataList.addAll(newData);
+        notifyDataSetChanged();
+    }
+
+    public void setmDataToTop(ChargeModel model) {
+        mDataList.add(0,model);
+        notifyItemInserted(0);
+
+    }
+
     @NonNull
     @Override
     public ChargesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
-        return new ChargesViewHolder();
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext())
+        return new ChargesViewHolder(layoutInflater.inflate(R.layout.cell_charge, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ChargesViewHolder holder, int position) {
-
+        holder.bind(mDataList.get(position));
     }
 
     @Override
@@ -33,11 +48,19 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
 
     static class ChargesViewHolder extends RecyclerView.ViewHolder {
 
-        public ChargesViewHolder(@NonNull View itemView) {
+        private TextView txtName = itemView.findViewById(R.id.textChargeName)
+        private TextView txtValue = itemView.findViewById(R.id.textChargeValue)
+
+
+        ChargesViewHolder(@NonNull View itemView) {
             super(itemView);
         }
 
+        void bind(ChargeModel chargeModel) {
+            txtName.setText(chargeModel.getName());
+            txtValue.setText(chargeModel.getValue());
 
+        }
 
     }
 }
