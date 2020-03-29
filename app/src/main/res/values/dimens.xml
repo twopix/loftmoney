@@ -2,4 +2,6 @@
 <resources>
     <dimen name="buttonTextSize">16sp</dimen>
     <dimen name="mainLeftPadding">33dp</dimen>
+    <dimen name="divider_size">1dp</dimen>
+    <dimen name="primary_text_size">20sp</dimen>
 </resources>

@@ -4,4 +4,5 @@
     <string name="EditAddActivityTitle">Название</string>
     <string name="EditAddActivityNumber">Цена</string>
     <string name="BtnAddActivityAdd">Добавить</string>
+    <string name="currency">$</string>
 </resources>

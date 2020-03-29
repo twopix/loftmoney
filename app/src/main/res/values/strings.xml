@@ -5,4 +5,5 @@
     <string name="EditAddActivityTitle">Title</string>
     <string name="EditAddActivityNumber">Price</string>
     <string name="BtnAddActivityAdd">Add</string>
+    <string name="currency">$</string>
 </resources>

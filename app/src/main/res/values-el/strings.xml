@@ -5,4 +5,5 @@
     <string name="EditAddActivityTitle">Ονομασία</string>
     <string name="EditAddActivityNumber">Τιμή</string>
     <string name="BtnAddActivityAdd">Προσθήκη</string>
+    <string name="currency">$</string>
 </resources>
