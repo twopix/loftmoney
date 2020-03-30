@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setText(R.string.expences);
         tabLayout.getTabAt(1).setText(R.string.income);
 
+
     }
 
     static class BudgetPagerAdapter extends FragmentPagerAdapter {
