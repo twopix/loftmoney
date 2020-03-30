@@ -6,4 +6,6 @@
     <string name="EditAddActivityNumber">Τιμή</string>
     <string name="BtnAddActivityAdd">Προσθήκη</string>
     <string name="currency">$</string>
+    <string name="expences">Έξοδα</string>
+    <string name="income">Έσωδα</string>
 </resources>
