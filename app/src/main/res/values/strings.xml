@@ -6,4 +6,6 @@
     <string name="EditAddActivityNumber">Price</string>
     <string name="BtnAddActivityAdd">Add</string>
     <string name="currency">$</string>
+    <string name="expences">Expences</string>
+    <string name="income">Incomes</string>
 </resources>
