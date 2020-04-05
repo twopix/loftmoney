@@ -8,4 +8,5 @@
     <string name="currency">$</string>
     <string name="expences">Έξοδα</string>
     <string name="income">Έσωδα</string>
+    <string name="message_success">Successfully added</string>
 </resources>

@@ -14,6 +14,7 @@ import com.example.loftmoney.R;
 import com.example.loftmoney.screens.second.BudgetFragment;
 import com.google.android.material.tabs.TabLayout;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

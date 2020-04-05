@@ -7,4 +7,5 @@
     <string name="currency">$</string>
     <string name="expences">Расходы</string>
     <string name="income">Доходы</string>
+    <string name="message_success">Successfully added</string>
 </resources>
