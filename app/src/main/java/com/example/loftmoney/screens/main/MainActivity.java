@@ -8,14 +8,25 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.loftmoney.R;
+import com.example.loftmoney.screens.second.AddItemActivity;
 import com.example.loftmoney.screens.second.BudgetFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+    public static final String EXPENSE = "expense";
+    public static final String INCOME = "income";
+
+    private static final String USER_ID = "gmelidis";
+//    public static final String TOKEN = "token";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +36,24 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabMaintabs);
 
-        ViewPager viewPager = findViewById(R.id.viewpagerActivity);
-        viewPager.setAdapter(new BudgetPagerAdapter(getSupportFragmentManager(),FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
+        final ViewPager viewPager = findViewById(R.id.viewpagerActivity);
+        final BudgetPagerAdapter adapter = new BudgetPagerAdapter(
+                getSupportFragmentManager(),
+                FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
+        viewPager.setAdapter(adapter);
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.fabMain);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(final View v) {
+                final int activeFragmentIndex = viewPager.getCurrentItem();
+                Fragment activeFragment = getSupportFragmentManager().getFragments().get(activeFragmentIndex);
+                activeFragment.startActivityForResult(new Intent(MainActivity.this, AddItemActivity.class),
+                        BudgetFragment.REQUEST_CODE);
+            }
+        });
 
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setText(R.string.expences);
@@ -37,14 +64,21 @@ public class MainActivity extends AppCompatActivity {
 
     static class BudgetPagerAdapter extends FragmentPagerAdapter {
 
-        public BudgetPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+        public BudgetPagerAdapter(@NonNull final FragmentManager fm, final int behavior) {
             super(fm, behavior);
         }
 
         @NonNull
         @Override
-        public Fragment getItem(int position) {
-            return new BudgetFragment();
+        public Fragment getItem(final int position) {
+            switch (position) {
+                case 0:
+                    return BudgetFragment.newInstance(R.color.dark_sky_blue, EXPENSE);
+                case 1:
+                    return BudgetFragment.newInstance(R.color.apple_green, INCOME);
+                default:
+                    return null;
+            }
         }
 
         @Override

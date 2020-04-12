@@ -3,6 +3,7 @@ package com.example.loftmoney;
 
 import android.app.Application;
 
+import com.example.loftmoney.screens.web.Api;
 import com.example.loftmoney.screens.web.GetItemsRequest;
 import com.example.loftmoney.screens.web.PostItemRequest;
 
@@ -16,6 +17,8 @@ public class LoftApp extends Application {
 
     private Retrofit retrofit;
 
+    private Api mApi;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -24,15 +27,15 @@ public class LoftApp extends Application {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
                 .build();
 
-        retrofit = new Retrofit.Builder()
-                .client(okHttpClient)
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://verdant-violet.glitch.me/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(okHttpClient)
                 .build();
+
+        mApi = retrofit.create(Api.class);
     }
 
     public GetItemsRequest getItemsRequest() {
@@ -41,5 +44,9 @@ public class LoftApp extends Application {
 
     public PostItemRequest postItemRequest() {
         return retrofit.create(PostItemRequest.class);
+    }
+
+    public Api getApi() {
+        return mApi;
     }
 }

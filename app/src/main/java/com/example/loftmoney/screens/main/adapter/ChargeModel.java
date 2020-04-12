@@ -28,7 +28,7 @@ public class ChargeModel implements Serializable {
     public  ChargeModel(ItemRemote itemRemote) {
         this.id = itemRemote.getId();
         this.name = itemRemote.getName();
-        this.value = itemRemote.getPrice() + " " + Resources.getSystem().getString(R.string.currency);
+        this.value = itemRemote.getPrice() + " Р. ";
         this.visibility = View.VISIBLE;
     }
 

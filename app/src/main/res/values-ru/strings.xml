@@ -8,4 +8,5 @@
     <string name="expences">Расходы</string>
     <string name="income">Доходы</string>
     <string name="message_success">Successfully added</string>
+    <string name="price_with_currency">%s Р.</string>
 </resources>

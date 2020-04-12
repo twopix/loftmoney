@@ -9,4 +9,5 @@
     <string name="expences">Expences</string>
     <string name="income">Incomes</string>
     <string name="message_success">Successfully added</string>
+    <string name="price_with_currency">%s $</string>
 </resources>
