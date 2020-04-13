@@ -3,7 +3,7 @@ package com.example.loftmoney;
 
 import android.app.Application;
 
-import com.example.loftmoney.screens.web.Api;
+import com.example.loftmoney.screens.web.AuthRequest;
 import com.example.loftmoney.screens.web.GetItemsRequest;
 import com.example.loftmoney.screens.web.PostItemRequest;
 
@@ -17,36 +17,32 @@ public class LoftApp extends Application {
 
     private Retrofit retrofit;
 
-    private Api mApi;
-
     @Override
     public void onCreate() {
         super.onCreate();
+
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
                 .build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://verdant-violet.glitch.me/")
-                .addConverterFactory(GsonConverterFactory.create())
+        String baseUrl = "https://loftschool.com/android-api/basic/v1/";
+        retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-
-        mApi = retrofit.create(Api.class);
     }
 
-    public GetItemsRequest getItemsRequest() {
-        return retrofit.create(GetItemsRequest.class);
-    }
 
+    public GetItemsRequest getItemsRequest() {return retrofit.create(GetItemsRequest.class);}
+    public AuthRequest getAuthRequest() { return retrofit.create(AuthRequest.class); }
     public PostItemRequest postItemRequest() {
         return retrofit.create(PostItemRequest.class);
     }
 
-    public Api getApi() {
-        return mApi;
-    }
 }

@@ -59,8 +59,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         public ItemViewHolder(@NonNull final View itemView, final int colorId) {
             super(itemView);
 
-            mNameView = itemView.findViewById(R.id.textChargeName);
-            mPriceView = itemView.findViewById(R.id.textChargeValue);
+            mNameView = itemView.findViewById(R.id.txtChargeName);
+            mPriceView = itemView.findViewById(R.id.txtChargeValue);
 
             final Context context = mPriceView.getContext();
             mPriceView.setTextColor(ContextCompat.getColor(context, colorId));

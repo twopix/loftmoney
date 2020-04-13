@@ -49,4 +49,18 @@
         <item name="android:letterSpacing">0.04</item>
         <item name="android:textColor">@color/perrywinkle_70</item>
     </style>
+
+    <style name="LoftButton" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@drawable/loft_button_background</item>
+    </style>
+
+    <style name="ZeplinRegular" parent="TextAppearance.AppCompat" >
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">#666664</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
