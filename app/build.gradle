@@ -14,6 +14,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file ("release.jks")
+            storePassword 'qwerty'
+            keyAlias 'twopix'
+            keyPassword 'qwerty'
+        }
+    }
+
     buildTypes {
 
         debug {
@@ -23,12 +32,27 @@ android {
         }
 
         release {
+            signingConfig signingConfigs.release
             buildConfigField("String", "URL", "\"https://loftschool.com/android-api/basic/v1/\"")
             resValue("string", "app_name", "Loftmoney")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    flavorDimensions 'target'
+
+    productFlavors {
+        mobile {
+            resValue("String", "app_name", "loftmoney-mobile")
+        }
+
+        beta {
+            resValue("String", "app_name", "loftmoney-beta")
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
