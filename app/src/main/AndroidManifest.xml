@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.second.SecondActivity" />
-        <activity android:name=".screens.main.MainActivity" />
+        <activity android:name=".screens.second.SecondActivity"  android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity android:name=".screens.main.MainActivity"  android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity android:name=".screens.auth.AuthActivity" />
         <activity android:name=".screens.splash.SplashActivity">
             <intent-filter>
