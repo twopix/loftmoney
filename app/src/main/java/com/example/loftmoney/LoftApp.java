@@ -29,10 +29,10 @@ public class LoftApp extends Application {
                 .addInterceptor(interceptor)
                 .build();
 
-        String baseUrl = "https://loftschool.com/android-api/basic/v1/";
+
         retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl(baseUrl)
+                .baseUrl(BuildConfig.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

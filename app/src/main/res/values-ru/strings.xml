@@ -15,4 +15,5 @@
     <string name="hint_add_charge_value">Charge value...</string>
     <string name="action_add">Add Charge</string>
     <string name="expense_not_found">Вы еще не записали свои расходы. Нажмите на кнопку в углу, чтобы создать расход</string>
+    <string name="homeText">Main activity (RU)</string>
 </resources>
