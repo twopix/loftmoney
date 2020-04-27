@@ -56,8 +56,8 @@ public class ChargesAdapter extends RecyclerView.Adapter<ChargesAdapter.ChargesV
 
     static class ChargesViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtName = itemView.findViewById(R.id.textChargeName);
-        private TextView txtValue = itemView.findViewById(R.id.textChargeValue);
+        private TextView txtName = itemView.findViewById(R.id.txtChargeName);
+        private TextView txtValue = itemView.findViewById(R.id.txtChargeValue);
 
 
         ChargesViewHolder(@NonNull View itemView) {

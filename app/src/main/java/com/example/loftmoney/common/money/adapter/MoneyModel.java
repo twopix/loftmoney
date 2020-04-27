@@ -1,37 +1,39 @@
-package com.example.loftmoney.screens.main.adapter;
+package com.example.loftmoney.common.money.adapter;
 
-import android.content.res.Resources;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.View;
 
-import com.example.loftmoney.R;
 import com.example.loftmoney.screens.web.models.ItemRemote;
 
 import java.io.Serializable;
 
-public class ChargeModel implements Serializable {
-
-    public static String KEY_NAME = ChargeModel.class.getName();
+public class MoneyModel implements Serializable {
+    public static String KEY_NAME = MoneyModel.class.getName();
 
     private String id;
     private String name;
-    private String value;
+    private int value;
+    private String type;
     private int visibility;
 
-    public ChargeModel(String name, String value) {
-        this.id = id;
+    public MoneyModel(String name, int value, String type) {
+        this.id = "1";
         this.name = name;
         this.value = value;
-        this.visibility = View.VISIBLE;
-    }
-    public  ChargeModel(ItemRemote itemRemote) {
-        this.id = itemRemote.getId();
-        this.name = itemRemote.getName();
-        this.value = itemRemote.getPrice() + " Р. ";
+        this.type = type;
         this.visibility = View.VISIBLE;
     }
 
+    public MoneyModel(ItemRemote itemRemote, String type) {
+        this.id = itemRemote.getId();
+        this.name = itemRemote.getName();
+        this.value = itemRemote.getPrice();
+        this.type = type;
+        this.visibility = View.VISIBLE;
+    }
+
+    public String getType() {
+        return type;
+    }
 
     public String getId() {
         return id;
@@ -49,7 +51,11 @@ public class ChargeModel implements Serializable {
         return name;
     }
 
-    public String getValue() {
+    public int getValue() {
         return value;
+    }
+
+    public String getStringValue() {
+        return String.valueOf(value) + "₽";
     }
 }

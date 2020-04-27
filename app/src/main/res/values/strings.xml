@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">LoftMoney</string>
     <string name="homeText">Main activity</string>
     <string name="loginText">Login</string>
     <string name="EditAddActivityTitle">Title</string>
@@ -8,4 +7,12 @@
     <string name="currency">$</string>
     <string name="expences">Expences</string>
     <string name="income">Incomes</string>
+    <string name="message_success">Successfully added</string>
+    <string name="price_with_currency">%s $</string>
+    <string name="balance_available_money">Доступные финансы</string>
+    <string name="title_balance">Balance</string>
+    <string name="hint_add_charge_name">Charge name…</string>
+    <string name="hint_add_charge_value">Charge value…</string>
+    <string name="action_add">Add Charge</string>
+    <string name="expense_not_found">Вы еще не записали свои расходы. Нажмите на кнопку в углу, чтобы создать расход</string>
 </resources>
